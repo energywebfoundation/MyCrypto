@@ -45,7 +45,10 @@ import {
   TOMO_DEFAULT,
   UBQ_DEFAULT,
   WEB_DEFAULT,
-  AUX_DEFAULT
+  AUX_DEFAULT,
+  VOLTA_DEFAULT,
+  EWC_DEFAULT
+
 } from 'config/dpaths';
 import { makeExplorer } from 'utils/helpers';
 import * as types from './types';
@@ -1022,6 +1025,57 @@ export const STATIC_NETWORKS_INITIAL_STATE: types.ConfigStaticNetworksState = {
       min: 0.1,
       max: 40,
       initial: 4
+    }
+  },
+  VOLTA: {
+    id: 'VOLTA',
+    name: 'Volta',
+    unit: 'VT',
+    chainId: 73799,
+    isCustom: false,
+    color: '#6d2eae',
+    isTestnet: true,
+    blockExplorer: makeExplorer({
+      name: 'Enenrgy Web VOLTA Explorer',
+      origin: 'https://volta-explorer.energyweb.org',
+      addressPath: 'address',
+      blockPath: 'blocks'
+    }),
+    tokens: [],
+    contracts: [],
+    dPathFormats: {
+      [SecureWalletName.TREZOR]: VOLTA_DEFAULT,
+      [SecureWalletName.SAFE_T]: VOLTA_DEFAULT,
+      [SecureWalletName.LEDGER_NANO_S]: ETH_LEDGER,
+      [InsecureWalletName.MNEMONIC_PHRASE]: VOLTA_DEFAULT
+    },
+    gasPriceSettings: testnetDefaultGasPrice
+  },
+  EWC: {
+    id: 'EWC',
+    name: 'Energy Web',
+    unit: 'EWT',
+    chainId: 246,
+    isCustom: false,
+    color: '#6d2eae',    
+    blockExplorer: makeExplorer({
+      name: 'Enenrgy Web Chain Explorer',
+      origin: 'https://explorer.energyweb.org',
+      addressPath: 'address',
+      blockPath: 'blocks'
+    }),
+    tokens: [],
+    contracts: [],
+    dPathFormats: {
+      [SecureWalletName.TREZOR]: EWC_DEFAULT,
+      [SecureWalletName.SAFE_T]: EWC_DEFAULT,
+      [SecureWalletName.LEDGER_NANO_S]: ETH_LEDGER,
+      [InsecureWalletName.MNEMONIC_PHRASE]: EWC_DEFAULT
+    },
+    gasPriceSettings: {
+      min: 0.1,
+      max: 10,
+      initial: 1
     }
   }
 };

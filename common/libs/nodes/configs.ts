@@ -402,6 +402,24 @@ export const NODE_CONFIGS: { [key in StaticNetworkIds]: RawNodeConfig[] } = {
       service: 'auxilium.global',
       url: 'https://rpc.auxilium.global'
     }
+  ],
+
+  VOLTA: [
+    {
+      name: makeNodeName('VOLTA', 'volta-rpc.energyweb.org'),
+      type: 'rpc',
+      service: 'volta-rpc.energyweb.org',
+      url: 'https://volta-rpc.energyweb.org/'
+    }
+  ],
+
+  EWC: [
+    {
+      name: makeNodeName('EWC', 'rpc.energyweb.org'),
+      type: 'rpc',
+      service: 'rpc.energyweb.org',
+      url: 'https://rpc.energyweb.org/'
+    }
   ]
 };
 

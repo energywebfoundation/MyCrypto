@@ -197,6 +197,16 @@ export const AUX_DEFAULT: DPath = {
   value: "m/44'/344'/0'/0"
 };
 
+export const VOLTA_DEFAULT: DPath = {
+  label: 'Default (VOLTA)',
+  value: "m/44'/73799'/0'/0"
+};
+
+export const EWC_DEFAULT: DPath = {
+  label: 'Default (VOLTA)',
+  value: "m/44'/246'/0'/0"
+};
+
 export const DPaths: DPath[] = [
   ETH_DEFAULT,
   ETH_TREZOR,
@@ -236,7 +246,9 @@ export const DPaths: DPath[] = [
   DEXON_DEFAULT,
   ASK_DEFAULT,
   ASK_TREZOR,
-  AUX_DEFAULT
+  AUX_DEFAULT,
+  VOLTA_DEFAULT,
+  EWC_DEFAULT
 ];
 
 // PATHS TO BE INCLUDED REGARDLESS OF WALLET FORMAT
